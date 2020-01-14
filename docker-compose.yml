@@ -4,7 +4,7 @@ version: '3.6'
 services:
 
   dbudf:
-    image: mariadb-udf-ok:10.4
+    image: miguelwill/mariadb-udf:latest
     restart: always
     volumes:
        - db-data:/var/lib/mysql
