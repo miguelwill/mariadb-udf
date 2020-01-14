@@ -1,0 +1,21 @@
+#version for config and support version 18
+version: '3.6'
+
+services:
+
+  dbudf:
+    image: mariadb-udf-ok:10.4
+    restart: always
+    volumes:
+       - db-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: passroot
+      MYSQL_DATABASE: sitiodb
+      MYSQL_USER: sitiouser
+      MYSQL_PASSWORD: sitioPass
+      TZ: America/Santiago
+    ports:
+      - 3306:3306
+
+volumes:
+  db-data:
