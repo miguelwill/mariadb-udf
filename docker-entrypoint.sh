@@ -252,8 +252,8 @@ docker_setup_db() {
 
 		docker_process_sql --database=mysql <<<"FLUSH PRIVILEGES ;"
 	fi
-		# Load Functions for plugin UDF	
-		mysql_note "Load functions for UDF"
+		# Load Functions for plugin UDF-sys
+		mysql_note "Load functions for UDF-sys"
 		docker_process_sql --database=mysql < /usr/local/bin/lib_mysqludf_sys/lib_mysqludf_sys.sql
 }
 
