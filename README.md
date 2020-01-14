@@ -9,7 +9,7 @@
  # Module UDF_sys
  UDF_sys module compiled at image creation time and copied in mariadb plugin path
 
- #Functions
+ # Functions
  UDF functions loaded at database initialization
  files uploaded from the repository https://github.com/mysqludf/lib_mysqludf_sys
  Updated Makefile with plugin path in mariadb 10.4 working on the official image.
