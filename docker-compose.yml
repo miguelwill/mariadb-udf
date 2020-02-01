@@ -5,6 +5,7 @@ services:
 
   dbudf:
     image: miguelwill/mariadb-udf-sys:latest
+    container_name: dbudf
     restart: always
     volumes:
        - db-data:/var/lib/mysql
@@ -16,6 +17,20 @@ services:
       TZ: America/Santiago
     ports:
       - 3306:3306
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+     - PMA_ARBITRARY=0
+     - PMA_HOST=dbudf
+    restart: always
+    ports:
+     - 8080:80
+    volumes:
+     - /sessions
+     - phpmyadmin_conf:/usr/local/etc
+
 
 volumes:
   db-data:
+  phpmyadmin_conf:
