@@ -1,4 +1,4 @@
-FROM mariadb:10.4
+FROM mariadb:latest
 
 LABEL maintainer "miguelwill@gmail.com"
 
@@ -9,9 +9,9 @@ RUN     apt-get update; \
         ; \
         rm -rf /var/lib/apt/lists/*;
 
-# copy udf plugin source files 
+# copy udf plugin source files
 RUN mkdir /usr/local/bin/lib_mysqludf_sys
-COPY lib_mysqludf_sys/* /usr/local/bin/lib_mysqludf_sys/
+COPY lib_mysqludf_sys/ /usr/local/bin/lib_mysqludf_sys/
 RUN cd /usr/local/bin/lib_mysqludf_sys && make
 
 VOLUME /var/lib/mysql
