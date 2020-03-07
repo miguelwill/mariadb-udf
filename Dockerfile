@@ -5,7 +5,7 @@ LABEL maintainer "miguelwill@gmail.com"
 # libraries for build UDF plugin
 RUN     apt-get update; \
         apt-get install -y \
-        libmysqlclient-dev make gcc vim net-tools\
+        libmysqlclient-dev make gcc vim-tiny net-tools\
         ; \
         rm -rf /var/lib/apt/lists/*;
 

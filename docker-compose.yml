@@ -17,6 +17,9 @@ services:
       TZ: America/Santiago
     ports:
       - 3306:3306
+    command:
+      --max_allowed_packet=1024M
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
